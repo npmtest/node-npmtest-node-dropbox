@@ -1,1 +1,40 @@
-{     "devDependencies": {         "node-dropbox": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-node-dropbox",     "homepage": "https://github.com/npmtest/node-npmtest-node-dropbox",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-node-dropbox.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [node-dropbox (v0.1.8)](https://github.com/g33kidd/node-dropbox#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-node-dropbox.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-node-dropbox) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-node-dropbox.svg)](https://travis-ci.org/npmtest/node-npmtest-node-dropbox)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "node-dropbox": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-node-dropbox",
+    "keywords": [
+        "coverage",
+        "test",
+        "node-dropbox"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_node_dropbox.js",
+    "name": "npmtest-node-dropbox",
+    "nameAlias": "npmtest_node_dropbox",
+    "nameOriginal": "npmtest-node-dropbox",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-node-dropbox.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
